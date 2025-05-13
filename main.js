@@ -241,11 +241,19 @@ setTimeout(() => {
       }
     }, 2200);
 
-    // Sau 15s kể từ khi hết thơ thì hiện thiệp
-    setTimeout(() => {
-        const card = document.getElementById("invitationCard");
-        card.style.display = "block";
-    }, 50000);
+    // // Sau 15s kể từ khi hết thơ thì hiện thiệp
+    // setTimeout(() => {
+    //     const card = document.getElementById("invitationCard");
+    //     card.style.display = "block";
+    // }, 50000);
+
+    // Sau khi toàn bộ thơ hiện xong + 15s thì hiện thiệp
+const totalPoemTime = poem.length * 2200;
+setTimeout(() => {
+  const card = document.getElementById("invitationCard");
+  card.style.display = "block";
+}, totalPoemTime + 15000); // chờ thêm 15s sau khi hết thơ
+
   
   }
   
