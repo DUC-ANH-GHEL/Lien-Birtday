@@ -245,7 +245,7 @@ setTimeout(() => {
     setTimeout(() => {
         const card = document.getElementById("invitationCard");
         card.style.display = "block";
-    }, 35000);
+    }, 50000);
   
   }
   
