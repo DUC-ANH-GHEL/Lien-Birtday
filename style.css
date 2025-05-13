@@ -1,0 +1,325 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #6a0572, #ab83a1);
+    overflow: hidden;
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  /* .title {
+    font-size: 30px;
+    margin-top: 20px;
+    color: white;
+    position: relative;
+    z-index: 2;
+  } */
+
+  .title {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: white;
+    z-index: 10;
+  }
+  
+  
+  /* Trái tim */
+  .heart {
+    font-size: 100px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: opacity 2s ease-in, transform 2s ease-in;
+    animation: beat 1s infinite;
+    z-index: 2;
+  }
+  .heart.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .heart.hide {
+    animation: none;
+    transform: translate(150vw, -50%) scale(1);
+    opacity: 0;
+    transition: transform 2s ease-in, opacity 2s ease-in;
+  }
+  
+  @keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  
+  /* Ảnh */
+  .images {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-200%, -50%); /* xuất phát ngoài tầm nhìn trái */
+    transition: transform 60s linear;
+    visibility: hidden;
+  }
+  
+  .images.slide {
+    transform: translate(200%, -50%); /* kết thúc ngoài tầm nhìn phải */
+    visibility: visible;
+  }
+  
+  .img {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 0 10px #fff;
+  }
+  
+  /* Hộp quà */
+  .gift {
+    font-size: 60px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1s ease-in, transform 0.5s ease-in;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  .gift.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .gift.hide {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  /* Thơ */
+  .poem-box {
+    margin: 20px auto;
+    font-size: 20px;
+    color: #fff;
+    max-width: 600px;
+    max-height: 250px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    scroll-behavior: smooth;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .poem-line {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  
+  /* Canvas pháo hoa */
+  canvas#fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+  }
+  
+  /* Responsive mobile */
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 22px;
+      margin-top: 16px;
+    }
+  
+    .heart {
+      font-size: 60px;
+    }
+  
+    .img {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .gift {
+      font-size: 50px;
+    }
+  
+    .poem-box {
+      font-size: 16px;
+      max-height: 350px;
+      max-width: 90vw;
+      padding: 0 5px;
+      margin-top: 60%;
+    }
+  
+    .poem-line {
+      line-height: 1.4;
+    }
+  }
+  
+
+  /* Intro Overlay */
+.intro-overlay {
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #1a001a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .intro-text {
+    font-size: 24px;
+    margin-bottom: 40px;
+    max-width: 90%;
+    white-space: pre-wrap;
+    font-family: monospace;
+    min-height: 3em;
+    padding-right: 40px;
+  }
+  
+  .start-button {
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(to right, #ff0080, #7928ca);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff0080;
+    transition: all 0.3s ease;
+    margin-right: 40px;
+  }
+  .start-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff66b2;
+  }
+  
+
+  
+
+  .circle-text-wrapper {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    z-index: 5;
+    pointer-events: none;
+  }
+  
+  .circle-text {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* animation: rotateText 4s linear forwards; */
+  }
+  
+  .circle-text span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    transform-origin: center center;
+  }
+  
+  
+  
+  @keyframes rotateText {
+    0% {
+      transform: rotate(0deg);
+    }
+    90% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .circle-text.rotate-animation {
+    animation: rotateText 20s linear forwards;
+  }
+  
+  
+/* Khi đã bay lên thành tiêu đề */
+.circle-text-wrapper.as-title {
+    top: 30px !important;
+    left: 5% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    height: auto !important;
+    pointer-events: none;
+  }
+  
+  .circle-text-wrapper.as-title .circle-text {
+    animation: none !important;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    position: relative;
+    transform: none !important;
+  }
+  
+  .circle-text-wrapper.as-title .circle-text span {
+    position: relative !important;
+    transform: none !important;
+    rotate: 0deg !important;
+    opacity: 1 !important;
+    font-size: 26px;
+  }
+  
+  
+
+  .invitation-card {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    z-index: 999;
+    max-width: 100vw;
+    text-align: left;
+    animation: fadeInUp 1s ease forwards;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate(-50%, 50px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+  

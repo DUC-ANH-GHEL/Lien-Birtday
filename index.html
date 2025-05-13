@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Liên</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio autoplay loop id="bgm" src="assets/music.mp3"></audio>
+
+  <!-- <h1 class="title">Chúc mừng sinh nhật Liên Liên</h1> -->
+ 
+  
+  <div class="heart">💖</div>
+  <div class="circle-text-wrapper" id="circleTextWrapper">
+    <div class="circle-text" id="circleText">
+      <!-- các span từng ký tự sẽ được render bằng JS -->
+    </div>
+  </div>
+  
+  <canvas id="fireworks"></canvas>
+
+  <div class="images">
+    <img src="assets/1.jpg" class="img" />
+    <img src="assets/2.jpg" class="img" />
+    <img src="assets/3.jpg" class="img" />
+    <img src="assets/4.jpg" class="img" />
+    <img src="assets/5.jpg" class="img" />
+    <img src="assets/6.jpg" class="img" />
+    <img src="assets/7.jpg" class="img" />
+    <img src="assets/8.jpg" class="img" />
+  </div>
+
+  <div class="gift" onclick="openGift()">🎁</div>
+  <div class="poem-box" id="poemBox"></div>
+
+  <div class="intro-overlay" id="intro">
+    <div class="intro-text" id="typing-text"></div>
+    <button class="start-button" onclick="startExperience()">❤️ BẮT ĐẦU HÀNH TRÌNH YÊU THƯƠNG</button>
+  </div>
+  
+  <div class="invitation-card" id="invitationCard">
+    <h2>🎉 MỜI BẠN LIÊN HOAN 🎉</h2>
+    <p><strong>Thời gian:</strong> 19h00 - Thứ Bảy, ngày 18/05/2025</p>
+    <p><strong>Địa điểm:</strong> Quán Lẩu Nướng 68 - 123 Đường Hoa Phượng</p>
+    <p><strong>Món ăn:</strong> Bò nướng lá lốt, lẩu gà lá é, sushi và nhiều món bất ngờ khác!</p>
+    <p>💌 Rất mong bạn đến chung vui!</p>
+  </div>
+  
+
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
