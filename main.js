@@ -281,7 +281,7 @@ setTimeout(() => {
   
   // Khi trang vừa load
   window.onload = () => {
-    const introText = "Hôm nay, ngày 14/5 – có một người đẹp ra đời, và cả vũ trụ dừng lại để chúc mừng em...";
+    const introText = "Hôm nay, ngày 14/5 – có một người đẹp ra đời, và cả vũ trụ dừng lại để chúc mừng sinh nhật em...";
     typeIntroText(introText, "typing-text");
   };
   
