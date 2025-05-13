@@ -92,7 +92,7 @@ const poem = [
     "Lại đến ngày ấy – ngày vàng trong tim.",
     "Chúc em rạng rỡ như chim",
     "Hót vang niềm vui giữa nghìn hoa thơm.",
-    "Mỗi ngày em sống đẹp hơn",
+    "Mỗi ngày em càng đẹp hơn",
     "Cười xinh như nắng, dịu êm như chiều.",
     "Cảm ơn em đến thật nhiều",
     "Cho anh thương nhớ, cho yêu đậm đà.",
